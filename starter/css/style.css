@@ -107,7 +107,7 @@ body {
         opacity: 0;
         transform: translateX(210px);
     }
-    45%{
+    50%{
         opacity: 0;
     }
     80% {
