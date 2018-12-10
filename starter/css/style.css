@@ -86,8 +86,8 @@ body {
     letter-spacing: 17.4px;
     margin-right: -17.4px;
     /* short-hand animation */
-    animation: moveInRight 1.5s ease-out;
-
+    animation: moveInRight .8s ease-out .6s;
+    animation-fill-mode: backwards;
 }
 
 @keyframes moveInLeft {
@@ -95,25 +95,30 @@ body {
         opacity: 0;
         transform: translateX(-100px);
     }
-    85% {
-        transform: translateX(10px)
+    80%{
+        transform: translateX(10px);
     }
     100% {
         opacity: 1;
-        transform: translate(0)
+        transform: translate(0);
     }
 }
 
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(210px);
+        transform: translateX(100px);
     }
-    50%{
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
         opacity: 0;
-    }
-    85% {
-        transform: translateX(-10px);
+        transform: translateY(30px);
     }
     100% {
         opacity: 1;
@@ -159,7 +164,7 @@ body {
     top: 0;
     left: 0;     
     z-index: -1;
-    transition: all .4;
+    transition: .4s;
 }
 
 .btn-white::after {
@@ -169,4 +174,10 @@ body {
 .btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom .8s ease-out .6s;
+    /* applies 0% styles before animation starts */
+    animation-fill-mode: backwards;
 }
