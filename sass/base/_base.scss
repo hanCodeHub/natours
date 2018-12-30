@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+html {
+    // this defines 1 rem as 10px;
+    font-size: 62.5%;
+}
+
+body {
+    /* inherit box-sizing with universal selector */
+    box-sizing: border-box;
+}
